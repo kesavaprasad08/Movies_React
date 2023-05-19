@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 
 import MoviesList from "./components/MoviesList";
 import "./App.css";
@@ -8,6 +8,10 @@ function App() {
   const [error, setError] = useState(null);
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const titleRef = useRef();
+  const openingTextRef = useRef();
+  const releaseDateRef = useRef();
 
   const fetchMoviesHandler = useCallback(async () => {
     setIsLoading(true);
@@ -47,8 +51,29 @@ function App() {
     setCancel(false);
     clearTimeout(timer);
   };
+
+  const addNewMovieHandler = (e) => {
+    e.preventDefault();
+    const newObj = {
+    title:titleRef.current.value,
+    openingText:openingTextRef.current.value,
+    releaseDateRef:releaseDateRef.current.value
+  }
+    console.log(newObj);
+  };
   return (
     <React.Fragment>
+      <section>
+        <form className="form">
+          <label>Title</label>
+          <input ref={titleRef} type="text" />
+          <label>Opening Text</label>
+          <input ref={openingTextRef} type="text" />
+          <label>Release Date</label>
+          <input ref={releaseDateRef} type="text" />
+          <button onClick={addNewMovieHandler}>Add Movie</button>
+        </form>
+      </section>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>

@@ -27,3 +27,42 @@ button:active {
   background-color: #460897;
   border-color: #460897;
 }
+
+form {
+  font: inherit;
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 40rem;
+  text-align: left;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+}
+input {
+  /* margin: 1rem auto;
+  width: 90%;
+  max-width: 90rem;
+  background-color: white;
+  padding: .4rem;
+  */
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border:solid
+}
+label{
+  font: inherit;
+  margin: .5  rem auto;
+  width: 90%;
+  max-width: 90rem;
+  background-color: white;
+  padding: .49rem;
+  border-radius: 12px;
+}
+
+button{
+  margin-left: auto;
+  margin-right: auto;
+}
